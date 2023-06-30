@@ -1,11 +1,12 @@
 var driverObject = {
-    "Matt": {"Leaving":0, "Arriving":1},
-    "Evan": {"Leaving":0, "Arriving":1}
+    "Matt": {"Leaving":{"Work":0,"Home":1}, "Arriving":{"Work":0,"Home":1}},
+    "Evan": {"Leaving":{"Work":0,"Home":1}, "Arriving":{"Work":0,"Home":1}}
   }
   window.onload = function() {
     startTime()
     var driverSel = document.getElementById("driver");
     var stageSel = document.getElementById("stage");
+    var directionSel = document.getElementById("direction");
     var submitBtn = document.getElementById("submit");
 
     checkDisabled();
@@ -19,6 +20,7 @@ var driverObject = {
       checkDisabled();
       //empty Chapters- and Topics- dropdowns
       stageSel.length = 1;
+      directionSel.length = 1;
       //display correct values
       for (var y in driverObject[this.value]) {
         stageSel.options[stageSel.options.length] = new Option(y, y);
@@ -30,15 +32,32 @@ var driverObject = {
       else {
         driverSel.classList.remove("is-selected");
         stageSel.classList.remove("is-selected");
+        directionSel.classList.remove("is-selected");
       }
     }
     stageSel.onchange = function() {
       checkDisabled();
+      directionSel.length = 1;
+
+      for (var z in driverObject[driverSel.value][this.value]) {
+        directionSel.options[directionSel.options.length] = new Option(z, z);
+      }
+
       if(stageSel.selectedIndex > 0) {
         stageSel.classList.add("is-selected");
       }
       else {
         stageSel.classList.remove("is-selected");
+        directionSel.classList.remove("is-selected");
+      }
+    }
+    directionSel.onchange = function() {
+      checkDisabled();
+      if(directionSel.selectedIndex > 0) {
+        directionSel.classList.add("is-selected");
+      }
+      else {
+        directionSel.classList.remove("is-selected");
       }
     }
   }
@@ -46,12 +65,15 @@ var driverObject = {
   function checkDisabled() {
     var driverSel = document.getElementById("driver");
     var stageSel = document.getElementById("stage");
+    var directionSel = document.getElementById("direction");
     var submitBtn = document.getElementById("submit");
     let dIsSel = (driverSel.selectedIndex > 0);
     let sIsSel = (stageSel.selectedIndex > 0);
+    let rIsSel = (directionSel.selectedIndex > 0);
 
     stageSel.disabled = (!dIsSel);
-    submitBtn.disabled = (!dIsSel ||!sIsSel);
+    directionSel.disabled = (!dIsSel || !sIsSel);
+    submitBtn.disabled = (!dIsSel ||!sIsSel || !rIsSel);
 
   }
 

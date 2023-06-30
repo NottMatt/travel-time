@@ -46,6 +46,7 @@ button:hover {
     border-bottom-width: 10px;
 }
 button:disabled {
+    border-color: #474752;
     overflow: hidden;
     height: 5px;
     padding-top: 0px;
@@ -149,6 +150,7 @@ h1 {
     transition: 0.2s ease;
 }
 .form-field:disabled {
+    border-color: #474752;
     overflow: hidden;
     height: 5px;
     padding-top: 0px;
@@ -191,10 +193,23 @@ option {
     border-color: white;
     border-radius: 8px;
     border-width: 4px;
-
-    color: white;
-
-    width: 50vw;
-    height: 10em;
     margin-bottom: 2em;
+    overflow-y: scroll;
+    height: 50vh;
+
+}
+
+table {
+    color: white;
+}
+tr {
+    margin: 0.5em;
+}
+th {
+    padding: 0.25em;
+    font-size: 1.5em;
+}
+td {
+    padding: 0.25em;
+    font-size: 1em;
 }
