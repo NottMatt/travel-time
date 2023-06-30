@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Travel Time</title>
+        <link rel="stylesheet" href="traveltime/tt-style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+    </head>
+    <body>
+        <div class="header-container neon">
+            <h1 class="header-title neon-text">Travel Time</h1>
+        </div>
+
+        <div id="clock"></div>
+
+        <div class="form-container neon">
+            <form class="form-body" name="form1" id="form1" action="/traveltime" method="post">
+                <select class="form-field" name="driver" id="driver">
+                  <option value="" selected="selected">Driver</option>
+                </select>
+                <br><br>
+                <select class="form-field" name="stage" id="stage">
+                  <option value="" selected="selected">Leaving or Arriving</option>
+                </select>
+                <br><br>
+                <button type="submit" id="submit" value="Submit"> Go</button>
+              </form>
+        </div>
+
+        <a style="margin-top:4em" href="/traveltime-data">Data Collection</a>
+
+    </body>
+    <script src="/traveltime/formdriver.js"></script>
+</html>
