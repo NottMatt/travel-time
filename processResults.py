@@ -1,28 +1,18 @@
-# Read CSV titled traveltime.csv
-# Format: DATE,DAY_OF_WEEK,LEAVE_TIME,ARRIVE_TIME,DRIVER,DIRECTION
-
-import csv
-import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 
 # Read CSV
 df = pd.read_csv('traveltime.csv')
 
-# Convert DATE to datetime
+# Convert dates
 df['DATE'] = pd.to_datetime(df['DATE'])
-
-# Convert LEAVE_TIME to datetime
 df['LEAVE_TIME'] = pd.to_datetime(df['LEAVE_TIME'])
-
-# Convert ARRIVE_TIME to datetime
 df['ARRIVE_TIME'] = pd.to_datetime(df['ARRIVE_TIME'])
 
 # Calculate trip duration in minutes and add it to the data frame
 df['TRIP_DURATION'] = (df['ARRIVE_TIME'] - df['LEAVE_TIME']).dt.total_seconds() / 60.0
 
-# Calculate the average trip duration by day of week for direction = work and join to a new data frame with the day of the week
+# Calculate the average trip duration by day of week for work
 df_work = df[df['DIRECTION'] == 'work'].groupby('DAY_OF_WEEK')['TRIP_DURATION'].mean().reset_index()
 
 days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri"]
