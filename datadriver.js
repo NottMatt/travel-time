@@ -30,10 +30,13 @@ fetch("/traveltime/traveltime.csv", {
                 tablerow.appendChild(tablecol);
                 tablecol.textContent = datacols[col];
                 if (col == 1) {
-                    tablecol.style["color"]="#ff6666";
+                    tablecol.style["color"]="#ff745f";
                 }
                 if (col == 4) {
                     tablecol.style["color"]="#6699ff";
+                }
+                if (col == 5) {
+                    tablecol.style["color"]="#84a98c";
                 }
             }
         }
@@ -43,10 +46,13 @@ fetch("/traveltime/traveltime.csv", {
                 tablerow.appendChild(tablecol);
                 tablecol.textContent = datacols[col];
                 if (col == 1) {
-                    tablecol.style["color"]="#ffb3b3";
+                    tablecol.style["color"]="#ff895f";
                 }
                 if (col == 4) {
                     tablecol.style["color"]="#b3ccff";
+                }
+                if (col == 5) {
+                    tablecol.style["color"]="#a1cfab";
                 }
             }
         }
