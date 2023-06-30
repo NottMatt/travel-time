@@ -2,6 +2,8 @@ DATE,DAY_OF_WEEK,LEAVE_TIME,ARRIVE_TIME,DRIVER,DIRECTION
 2023-06-26,Mon,6:20am,7:05am,Matt,work
 2023-06-27,Tue,6:35am,7:17am,Evan,work
 2023-06-28,Wed,6:15am,6:57am,Matt,work
+2023-06-28,Wed,2:05pm,3:04pm,Matt,home
 2023-06-29,Thu,6:15am,7:04am,Evan,work
+2023-06-29,Thu,1:43pm,2:35pm,Evan,home
 2023-06-30,Fri,6:07am,6:55am,Matt,work
 2023-06-30,Fri,6:20am,7:01am,Evan,work
