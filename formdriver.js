@@ -17,7 +17,7 @@ var driverObject = {
       driverSel.options[driverSel.options.length] = new Option(x, x);
     }
     driverSel.onchange = function() {
-      checkDisabled();
+      
       //empty Chapters- and Topics- dropdowns
       stageSel.length = 1;
       directionSel.length = 1;
@@ -25,40 +25,20 @@ var driverObject = {
       for (var y in driverObject[this.value]) {
         stageSel.options[stageSel.options.length] = new Option(y, y);
       }
-
-      if(driverSel.selectedIndex > 0) {
-        driverSel.classList.add("is-selected");
-      }
-      else {
-        driverSel.classList.remove("is-selected");
-        stageSel.classList.remove("is-selected");
-        directionSel.classList.remove("is-selected");
-      }
-    }
-    stageSel.onchange = function() {
       checkDisabled();
+    }
+
+    stageSel.onchange = function() {
       directionSel.length = 1;
 
       for (var z in driverObject[driverSel.value][this.value]) {
         directionSel.options[directionSel.options.length] = new Option(z, z);
       }
-
-      if(stageSel.selectedIndex > 0) {
-        stageSel.classList.add("is-selected");
-      }
-      else {
-        stageSel.classList.remove("is-selected");
-        directionSel.classList.remove("is-selected");
-      }
+      checkDisabled();
     }
+
     directionSel.onchange = function() {
       checkDisabled();
-      if(directionSel.selectedIndex > 0) {
-        directionSel.classList.add("is-selected");
-      }
-      else {
-        directionSel.classList.remove("is-selected");
-      }
     }
   }
 
@@ -74,6 +54,30 @@ var driverObject = {
     stageSel.disabled = (!dIsSel);
     directionSel.disabled = (!dIsSel || !sIsSel);
     submitBtn.disabled = (!dIsSel ||!sIsSel || !rIsSel);
+
+    if (dIsSel) {
+      driverSel.classList.add("is-selected");
+    }
+    else {
+      driverSel.classList.remove("is-selected");
+      stageSel.classList.remove("is-selected");
+      directionSel.classList.remove("is-selected");
+    }
+
+    if (sIsSel) {
+      stageSel.classList.add("is-selected");
+    }
+    else {
+      stageSel.classList.remove("is-selected");
+      directionSel.classList.remove("is-selected");
+    }
+
+    if (rIsSel) {
+      directionSel.classList.add("is-selected");
+    }
+    else {
+      directionSel.classList.remove("is-selected");
+    }
 
   }
 
