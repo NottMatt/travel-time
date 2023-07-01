@@ -195,8 +195,8 @@ option {
     border-width: 4px;
     margin-bottom: 2em;
     overflow-y: scroll;
-    height: 50vh;
-
+    max-height: 70vh;
+    transition: 0.3s ease;
 }
 
 table {
@@ -212,4 +212,14 @@ th {
 td {
     padding: 0.25em;
     font-size: 1em;
+}
+
+.nav-container {
+    overflow: hidden;
+    display: flex;
+    gap: 0.5em;
+}
+
+.chart-img {
+    width: 100%;
 }
