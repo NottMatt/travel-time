@@ -30,7 +30,7 @@ button{
     padding-bottom: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
-    font-size: calc(var(--font-base-size) * 0.1);
+    font-size: calc(var(--font-base-size) * 0.08);
 
     /* border */
     border-style: solid;
@@ -64,7 +64,7 @@ a{
     padding-bottom: 0.5em;
     padding-left: 2em;
     padding-right: 2em;
-    font-size: calc(var(--font-base-size) * 0.1);
+    font-size: calc(var(--font-base-size) * 0.08);
 
     /* border */
     border-style: solid;
@@ -208,10 +208,12 @@ tr {
 th {
     padding: 0.25em;
     font-size: 1.5em;
+    text-align: center;
 }
 td {
     padding: 0.25em;
     font-size: 1em;
+    text-align: center;
 }
 
 .nav-container {
@@ -222,4 +224,13 @@ td {
 
 .chart-img {
     width: 100%;
+}
+
+.next-button {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+.next-button:disabled {
+    display: none;
 }

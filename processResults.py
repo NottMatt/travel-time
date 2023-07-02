@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Read CSV
-df = pd.read_csv('traveltime.csv')
+df = pd.read_csv('/opt/jericho-flask/traveltime/traveltime.csv')
 
 # Convert dates
-df['DATE'] = pd.to_datetime(df['DATE'])
-df['LEAVE_TIME'] = pd.to_datetime(df['LEAVE_TIME'])
-df['ARRIVE_TIME'] = pd.to_datetime(df['ARRIVE_TIME'])
+df['DATE'] = pd.to_datetime(df['DATE'], format='%Y-%m-%d')
+df['LEAVE_TIME'] = pd.to_datetime(df['LEAVE_TIME'], format='%I:%M%p')
+df['ARRIVE_TIME'] = pd.to_datetime(df['ARRIVE_TIME'], format='%I:%M%p')
 
 # Calculate trip duration in minutes and add it to the data frame
 df['TRIP_DURATION'] = (df['ARRIVE_TIME'] - df['LEAVE_TIME']).dt.total_seconds() / 60.0

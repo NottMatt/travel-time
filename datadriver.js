@@ -1,12 +1,26 @@
 console.log("fetching data");
 var dataContainer = document.getElementById("data-container");
 var viewButton = document.getElementById("view-button");
+var nextButton = document.getElementById('next-button');
+
+var chartlist = [
+    '<img class="chart-img" src="traveltime/charts/generated.png">',
+    '<img class="chart-img" src="traveltime/charts/date_home.png">',
+    '<img class="chart-img" src="traveltime/charts/date_work.png">',
+    '<img class="chart-img" src="traveltime/charts/day_home.png">',
+    '<img class="chart-img" src="traveltime/charts/day_work.png">',
+    '<img class="chart-img" src="traveltime/charts/driver_home.png">',
+    '<img class="chart-img" src="traveltime/charts/driver_work.png">'
+]
+var chartIndex = 0;
 
 function tableview() {
 
+    nextButton.disabled = true;
+
     viewButton.onclick = chartview;
     dataContainer.innerHTML = "";
-    viewButton.textContent = "Chart View";
+    viewButton.textContent = "Charts";
     dataContainer.style["overflow-y"] = "scroll";
 
     fetch("/traveltime/traveltime.csv", { 
@@ -38,13 +52,13 @@ function tableview() {
                     tablerow.appendChild(tablecol);
                     tablecol.textContent = datacols[col];
                     if (col == 1) {
-                        tablecol.style["color"]="#ff745f";
+                        tablecol.style["color"]="coral";
                     }
                     if (col == 4) {
-                        tablecol.style["color"]="#6699ff";
+                        tablecol.style["color"]="cornflowerblue";
                     }
                     if (col == 5) {
-                        tablecol.style["color"]="#84a98c";
+                        tablecol.style["color"]="palegreen";
                     }
                 }
             }
@@ -54,13 +68,13 @@ function tableview() {
                     tablerow.appendChild(tablecol);
                     tablecol.textContent = datacols[col];
                     if (col == 1) {
-                        tablecol.style["color"]="#ff895f";
+                        tablecol.style["color"]="coral";
                     }
                     if (col == 4) {
-                        tablecol.style["color"]="#b3ccff";
+                        tablecol.style["color"]="cornflowerblue";
                     }
                     if (col == 5) {
-                        tablecol.style["color"]="#a1cfab";
+                        tablecol.style["color"]="palegreen";
                     }
                 }
             }
@@ -100,8 +114,21 @@ function parseCSV(data) {
 
 function chartview() {
 
+    nextButton.disabled = false;
+
     viewButton.onclick = tableview;
-    dataContainer.innerHTML ='<img class="chart-img" src="traveltime/charts/date_work.png">';
-    viewButton.textContent = "Table View";
+    setChart(chartIndex);
+    viewButton.textContent = "Table";
     dataContainer.style["overflow-y"] = "hidden";
 }
+
+function setChart(ind) {
+    dataContainer.innerHTML = chartlist[ind];
+}
+
+function rotateChart() {
+    chartIndex = (chartIndex + 1) % chartlist.length;
+    setChart(chartIndex);
+}
+
+
