@@ -195,7 +195,7 @@ option {
     border-width: 4px;
     margin-bottom: 2em;
     overflow-y: scroll;
-    max-height: 70vh;
+    max-height: 65vh;
     transition: 0.3s ease;
 }
 
