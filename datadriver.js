@@ -2,7 +2,7 @@ console.log("fetching data");
 var dataContainer = document.getElementById("data-container");
 var viewButton = document.getElementById("view-button");
 var nextButton = document.getElementById('next-button');
-var chartSelector = document.getElementById('chart-selector');
+// var chartSelector = document.getElementById('chart-selector');
 
 var chartlist = [
     '<img class="chart-img" src="traveltime/charts/generated.png">',
@@ -18,7 +18,7 @@ var chartIndex = 0;
 function tableview() {
 
     nextButton.disabled = true;
-    chartSelector.disabled = true;
+    // chartSelector.disabled = true;
 
     viewButton.onclick = chartview;
     dataContainer.innerHTML = "";
@@ -117,12 +117,22 @@ function parseCSV(data) {
 function chartview() {
 
     nextButton.disabled = false;
-    chartSelector.disabled = false;
+    // chartSelector.disabled = false;
 
     viewButton.onclick = tableview;
     setChart(chartIndex);
     viewButton.textContent = "Table";
     dataContainer.style["overflow-y"] = "hidden";
+
+    // populate chart dropdown
+    // chartSelector.length = 1;
+
+    //   for (var z in chartlist) {
+    //     chartSelector.options[chartSelector.options.length] = new Option(z, z);
+    //   }
+    
+
+    
 }
 
 function setChart(ind) {
@@ -133,5 +143,7 @@ function rotateChart() {
     chartIndex = (chartIndex + 1) % chartlist.length;
     setChart(chartIndex);
 }
+
+
 
 
