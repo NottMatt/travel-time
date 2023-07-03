@@ -96,7 +96,7 @@ var driverObject = {
     let s = today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('clock').innerHTML =  h + ":" + m + half;
+    document.getElementById('clock-digital').innerHTML =  h + ":" + m + half;
     setTimeout(startTime, 1000);
   }
 

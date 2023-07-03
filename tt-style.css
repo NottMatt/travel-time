@@ -87,7 +87,7 @@ h1 {
     margin: 0px;
 }
 
-#clock {
+#clock-digital {
     color: white;
     margin-bottom: 0.5em;
     font-size: calc(var(--font-base-size) * 0.3);
@@ -95,7 +95,7 @@ h1 {
 
 .header-container {
     /* spacing */
-    margin: 2em;
+    margin: 1em;
     padding: 1em;
     padding-left: 2em;
     padding-right: 2em;
@@ -111,6 +111,8 @@ h1 {
     
     border-width: 6px;
     border-left-width: 6px;
+    display: flex;
+    flex-direction: row;
 }
 
 .header-title {
@@ -193,7 +195,7 @@ option {
     border-color: white;
     border-radius: 8px;
     border-width: 4px;
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
     overflow-y: scroll;
     max-height: 65vh;
     transition: 0.3s ease;
