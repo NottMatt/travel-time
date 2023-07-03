@@ -97,6 +97,7 @@ plt.clf()
 # side by side line chart of commute times by dates
 plt.plot(df_work_date['SHORT_DATE'], df_work_date['TRIP_DURATION'], color='cornflowerblue')
 plt.plot(df_home_date['SHORT_DATE'], df_home_date['TRIP_DURATION'], color='coral')
+plt.legend(['Towards Work', 'Towards Home'])
 plt.title('Commute Time by Date')
 plt.xlabel('Date')
 plt.ylabel('Minutes')
