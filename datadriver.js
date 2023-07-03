@@ -2,6 +2,7 @@ console.log("fetching data");
 var dataContainer = document.getElementById("data-container");
 var viewButton = document.getElementById("view-button");
 var nextButton = document.getElementById('next-button');
+var chartSelector = document.getElementById('chart-selector');
 
 var chartlist = [
     '<img class="chart-img" src="traveltime/charts/generated.png">',
@@ -17,6 +18,7 @@ var chartIndex = 0;
 function tableview() {
 
     nextButton.disabled = true;
+    chartSelector.disabled = true;
 
     viewButton.onclick = chartview;
     dataContainer.innerHTML = "";
@@ -115,6 +117,7 @@ function parseCSV(data) {
 function chartview() {
 
     nextButton.disabled = false;
+    chartSelector.disabled = false;
 
     viewButton.onclick = tableview;
     setChart(chartIndex);

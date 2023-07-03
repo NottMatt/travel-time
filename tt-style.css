@@ -17,7 +17,6 @@ body{
     display: flex;
     height: 100vh;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 button{
@@ -220,7 +219,8 @@ td {
 
 .nav-container {
     overflow: hidden;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.5em;
 }
 
@@ -232,7 +232,33 @@ td {
     text-align: center;
     justify-content: center;
     align-content: center;
+
+    font-family: 'Fira Code', monospace;
+    color: white;
+    background: none;
+
+    /* spacing */
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    font-size: calc(var(--font-base-size) * 0.08);
+
+    /* border */
+    border-style: solid;
+    border-color: white;
+    border-radius: 8px;
+    border-width: 4px;
+    border-left-width: 4px;
+
+    /* effects */
+    transition: 0.2s ease;
+}
+.next-button:hover {
+    border-bottom-width: 10px;
 }
 .next-button:disabled {
     display: none;
 }
+
+
