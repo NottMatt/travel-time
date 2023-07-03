@@ -123,6 +123,16 @@ function chartview() {
     setChart(chartIndex);
     viewButton.textContent = "Table";
     dataContainer.style["overflow-y"] = "hidden";
+
+    // populate chart dropdown
+    chartSelector.length = 1;
+
+      for (var z in chartlist) {
+        chartSelector.options[chartSelector.options.length] = new Option(z, z);
+      }
+    
+
+    
 }
 
 function setChart(ind) {
@@ -133,5 +143,7 @@ function rotateChart() {
     chartIndex = (chartIndex + 1) % chartlist.length;
     setChart(chartIndex);
 }
+
+
 
 
