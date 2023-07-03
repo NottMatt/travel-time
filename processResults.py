@@ -4,6 +4,8 @@ import pandas as pd
 # Read CSV
 df = pd.read_csv('/opt/jericho-flask/traveltime/traveltime.csv')
 
+plt.style.use('seaborn-v0_8-darkgrid')
+
 # Make leave time and arrive time and direction columns all lower case
 df['LEAVE_TIME'] = df['LEAVE_TIME'].str.lower()
 df['ARRIVE_TIME'] = df['ARRIVE_TIME'].str.lower()
