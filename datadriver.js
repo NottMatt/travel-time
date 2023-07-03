@@ -6,6 +6,7 @@ var nextButton = document.getElementById('next-button');
 
 var chartlist = [
     '<img class="chart-img" src="traveltime/charts/generated.png">',
+    '<img class="chart-img" src="traveltime/charts/date_both.png">',
     '<img class="chart-img" src="traveltime/charts/date_home.png">',
     '<img class="chart-img" src="traveltime/charts/date_work.png">',
     '<img class="chart-img" src="traveltime/charts/day_home.png">',
