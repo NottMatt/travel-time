@@ -102,10 +102,7 @@ h1 {
 
     /* border */
     border-style: solid;
-    border-right-style: none;
     border-radius: 8px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
     border-color: white;
     
     border-width: 6px;
