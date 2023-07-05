@@ -92,8 +92,6 @@ plt.clf()
 # TODO: side by side bar chart of average commute time by driver going to work and home
 
 
-
-
 # side by side line chart of commute times by dates
 plt.plot(df_work_date['SHORT_DATE'], df_work_date['TRIP_DURATION'], color='cornflowerblue')
 plt.plot(df_home_date['SHORT_DATE'], df_home_date['TRIP_DURATION'], color='coral')
