@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Read CSV
-# df = pd.read_csv('/opt/jericho-flask/traveltime/traveltime.csv')
-df = pd.read_csv('traveltime.csv')
+df = pd.read_csv('/opt/jericho-flask/traveltime/traveltime.csv')
 
 plt.style.use('seaborn-v0_8-darkgrid')
 
