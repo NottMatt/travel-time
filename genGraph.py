@@ -2,6 +2,12 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
 
+feeds = {
+            "NetSPI": "https://www.netspi.com/blog/technical/feed",
+            "Hackaday": "https://hackaday.com/feed/",
+        }
+
+
 def generateGraph():
     # ingest csv
     df = pd.read_csv('/opt/jericho-flask/traveltime/traveltime.csv')
